@@ -1,23 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.5.10"
-    application
-}
-
-group = "dev.garlicbread"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
-
-
-tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-application {
-    mainClass.set("MainKt")
+    kotlin(Plugins.pluginKotlinJVM) version Versions.kotlin apply false
+    kotlin(Plugins.pluginKotlinSerialization) version Versions.kotlin apply false
 }
