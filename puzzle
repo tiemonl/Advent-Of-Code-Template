@@ -19,8 +19,7 @@ getinput() {
     echo "Fetching input data"
     curl -b session=$(cat .secret) https://adventofcode.com/$YEAR/day/$DAY/input > $folder/input$DAY.in
   else
-    echo "Opening input file for editing"
-    "${EDITOR:-vim}" $folder/input$DAY.in
+    touch $folder/input$DAY.in
   fi
 }
 
